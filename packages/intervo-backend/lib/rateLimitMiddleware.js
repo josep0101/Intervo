@@ -11,7 +11,7 @@ const apiLimiter = rateLimit({
 // More strict rate limiter for authentication endpoints
 const authLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 15, // Limit each IP to 5 requests per windowMs
+  max: 5, // Limit each IP to 5 requests per windowMs
   standardHeaders: true,
   message: { message: 'Too many authentication attempts, please try again later.' }
 });
@@ -19,7 +19,7 @@ const authLimiter = rateLimit({
 // Specific rate limiter for magic link endpoints
 const magicLinkLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 5, // Limit each IP to 3 magic link requests per hour
+  max: 3, // Limit each IP to 3 magic link requests per hour
   standardHeaders: true,
   message: { message: 'Too many magic link requests, please try again later.' },
   keyGenerator: (req) => {
