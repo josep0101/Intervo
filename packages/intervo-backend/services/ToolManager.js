@@ -1,4 +1,5 @@
 import { MCPTool } from '../tools/MCPTool.js';
+import { HTTPTool } from '../tools/HTTPTool.js';
 
 class ToolManager {
   constructor() {
@@ -61,8 +62,12 @@ class ToolManager {
         // Inject credentials if available
         const enhancedConfig = this.enhanceToolConfigWithCredentials(toolConfig);
         tool = MCPTool.createTool(enhancedConfig);
+      } else if (this.isHTTPTool(toolConfig)) {
+        // Generic REST/HTTP tool
+        const enhancedConfig = this.enhanceToolConfigWithCredentials(toolConfig);
+        tool = new HTTPTool(enhancedConfig);
       } else {
-        // Handle other tool types here in the future
+        // Fallback generic tool
         tool = this.createGenericTool(toolConfig);
       }
 
@@ -104,6 +109,11 @@ class ToolManager {
   isMCPTool(toolConfig) {
     const mcpTypes = ['calendly', 'google-calendar', 'outlook-calendar', 'mcp'];
     return mcpTypes.includes(toolConfig.type) || toolConfig.protocol === 'mcp';
+  }
+
+  isHTTPTool(toolConfig) {
+    const httpTypes = ['http', 'rest', 'api'];
+    return httpTypes.includes(toolConfig.type) || toolConfig.protocol === 'rest';
   }
 
   createGenericTool(toolConfig) {
