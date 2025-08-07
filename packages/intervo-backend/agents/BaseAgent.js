@@ -443,7 +443,7 @@ class BaseAgent {
   async executeTool(tool, intent, input, params = {}) {
     // This method determines what operation to call on the tool
     // based on the intent and input
-    const operation = this.mapIntentToOperation(intent, input, tool.type);
+    const operation = this.mapIntentToOperation(intent, input, tool.type, tool);
     
     try {
       const result = await tool.execute(operation, params);
@@ -475,7 +475,7 @@ class BaseAgent {
     }
   }
 
-  mapIntentToOperation(intent, input, toolType) {
+  mapIntentToOperation(intent, input, toolType, tool = null) {
     // Map intents to specific tool operations
     const inputLower = input.toLowerCase();
     
@@ -511,7 +511,21 @@ class BaseAgent {
       }
       return 'get_user_profile'; // Default
     }
-    
+
+    if (toolType === 'http' || toolType === 'api' || toolType === 'rest') {
+      // Generic HTTP tools define operations with optional keywords
+      if (tool && tool.operations) {
+        for (const [opName, opConfig] of Object.entries(tool.operations)) {
+          const keywords = opConfig.keywords || [];
+          if (keywords.some(k => inputLower.includes(k.toLowerCase()))) {
+            return opName;
+          }
+        }
+        return Object.keys(tool.operations)[0] || 'default';
+      }
+      return 'default';
+    }
+
     return 'default';
   }
 

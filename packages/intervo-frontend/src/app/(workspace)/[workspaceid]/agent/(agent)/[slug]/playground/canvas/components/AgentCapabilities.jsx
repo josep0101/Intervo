@@ -16,6 +16,7 @@ import IntentDialog from "./IntentDialog";
 import IntentItem from "./IntentItem";
 import FunctionDialog from "./FunctionDialog";
 import FunctionItem from "./FunctionItem";
+import ToolConfigDialog from "./ToolConfigDialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { usePlayground } from "@/context/AgentContext";
 
@@ -43,6 +44,7 @@ const AgentCapabilities = ({ agentData, onSave }) => {
 
   const { tools, fetchTools, aiConfig } = usePlayground();
   const [selectedTool, setSelectedTool] = useState(null);
+  const [isToolDialogOpen, setIsToolDialogOpen] = useState(false);
 
   useEffect(() => {
     if (agentData?.intents) {
@@ -215,6 +217,9 @@ const AgentCapabilities = ({ agentData, onSave }) => {
       onSave({
         tools: [selected._id],
       });
+      if (selected.requiredFields?.length) {
+        setIsToolDialogOpen(true);
+      }
     }
   };
   return (
@@ -276,31 +281,47 @@ const AgentCapabilities = ({ agentData, onSave }) => {
         <div className="space-y-1 flex-1">
           <h3 className="text-xs font-medium text-gray-900">Functions</h3>
           <p className="text-xs text-gray-600">
-            Add functions to extend the agent&apos;s capabilities
+            Connect external tools to extend the agent&apos;s capabilities
           </p>
-          {!selectedTool && (
-            <p className="text-xs text-gray-500 italic">
-              No functions added yet
-            </p>
-          )}
-          {selectedTool && (
-            <div className="text-xs text-gray-700 mt-2">
-              {selectedTool.name}
-            </div>
-          )}
+          <div className="flex items-center gap-2 mt-2">
+            <Select
+              value={selectedTool ? selectedTool._id : ""}
+              onValueChange={handleToolChange}
+            >
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Select a tool" />
+              </SelectTrigger>
+              <SelectContent>
+                {tools?.map((tool) => (
+                  <SelectItem key={tool._id} value={tool._id}>
+                    {tool.name}
+                  </SelectItem>
+                ))}
+                {selectedTool && <SelectItem value="remove">Remove</SelectItem>}
+              </SelectContent>
+            </Select>
+            {selectedTool && selectedTool.requiredFields?.length > 0 && (
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                onClick={() => setIsToolDialogOpen(true)}
+              >
+                Configure
+              </Button>
+            )}
+          </div>
         </div>
-        <Button
-          type="button"
-          onClick={() => {
-            /* We'll define this later */
-          }}
-          size="sm"
-          variant="outline"
-          className="text-xs ml-3"
-        >
-          Add Function
-        </Button>
       </div>
+
+      {selectedTool && (
+        <ToolConfigDialog
+          isOpen={isToolDialogOpen}
+          onClose={() => setIsToolDialogOpen(false)}
+          onSave={(config) => onSave({ tools: [selectedTool._id], config })}
+          tool={selectedTool}
+        />
+      )}
 
       <IntentDialog
         isOpen={dialogState.isOpen}

@@ -50,7 +50,7 @@ const ToolConfigDialog = ({ isOpen, onClose, onSave, tool }) => {
     const toolConfig = {
       name: tool.type,
       type: tool.type,
-      serverUrl: `http://localhost:${tool.serverPort}`,
+      serverUrl: tool.serverUrl || (tool.serverPort ? `http://localhost:${tool.serverPort}` : ""),
       config: formData,
     };
 
@@ -99,7 +99,7 @@ const ToolConfigDialog = ({ isOpen, onClose, onSave, tool }) => {
           <Button variant="outline" onClick={handleClose}>
             Cancel
           </Button>
-          <Button onClick={handleSave}>Save Tool</Button>
+          <Button onClick={handleSave}>Connect Tool</Button>
         </div>
       </DialogContent>
     </Dialog>
