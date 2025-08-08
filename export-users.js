@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Load environment variables from .env.production
-require('dotenv').config({ path: 'packages/intervo-backend/.env.production' });
+require('dotenv').config({ path: 'packages/voxa-backend/.env.production' });
 
 // User schema (matching the existing User.js model)
 const userSchema = new mongoose.Schema({

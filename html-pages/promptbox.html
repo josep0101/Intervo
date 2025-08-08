@@ -1037,25 +1037,25 @@
         // Construct the prompt from the suggestions interface
         const constructedPrompt = `Make me ${projectType} for ${industry} that helps ${description}`;
 
-        // Store in cookie with domain setting to access from app.intervo.ai
-        document.cookie = `intervo_prompt=${encodeURIComponent(
+        // Store in cookie with domain setting to access from app.voxa.ai
+        document.cookie = `voxa_prompt=${encodeURIComponent(
           constructedPrompt
-        )}; domain=.intervo.ai; path=/; max-age=3600`;
+        )}; domain=.voxa.ai; path=/; max-age=3600`;
 
-        // Redirect to app.intervo.ai
-        window.location.href = "https://app.intervo.ai/";
+        // Redirect to app.voxa.ai
+        window.location.href = "https://app.voxa.ai/";
       }
 
       function generateFromPrompt() {
         const prompt = document.querySelector(".prompt-input").value;
         if (prompt.trim()) {
           // Store the user-entered prompt in cookie
-          document.cookie = `intervo_prompt=${encodeURIComponent(
+          document.cookie = `voxa_prompt=${encodeURIComponent(
             prompt.trim()
-          )}; domain=.intervo.ai; path=/; max-age=3600`;
+          )}; domain=.voxa.ai; path=/; max-age=3600`;
 
-          // Redirect to app.intervo.ai
-          window.location.href = "https://app.intervo.ai/";
+          // Redirect to app.voxa.ai
+          window.location.href = "https://app.voxa.ai/";
         } else {
           alert("Please enter a description for your agent");
         }

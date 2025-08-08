@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intervo Pricing - Embed</title>
+    <title>Voxa Pricing - Embed</title>
   </head>
   <body>
     <style>
       /* Reset and defensive styles for the pricing component */
-      .intervo-pricing-wrapper * {
+      .voxa-pricing-wrapper * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -23,7 +23,7 @@
         overflow-x: hidden;
       }
 
-      .intervo-pricing-wrapper {
+      .voxa-pricing-wrapper {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           sans-serif !important;
         background-color: #f8fafc !important;
@@ -35,7 +35,7 @@
         min-height: 100vh !important;
       }
 
-      .intervo-pricing-container-outer {
+      .voxa-pricing-container-outer {
         max-width: 1200px !important;
         margin: 0 auto !important;
         display: flex !important;
@@ -44,12 +44,12 @@
         min-height: 100vh !important;
       }
 
-      .intervo-pricing-container-inner {
+      .voxa-pricing-container-inner {
         width: 95% !important;
         max-width: 1000px !important;
       }
 
-      .intervo-pricing-cards-container {
+      .voxa-pricing-cards-container {
         display: flex !important;
         gap: 12px !important;
         padding: 8px !important;
@@ -57,7 +57,7 @@
         flex-direction: row !important;
       }
 
-      .intervo-pricing-card {
+      .voxa-pricing-card {
         display: flex !important;
         flex-direction: column !important;
         background: white !important;
@@ -71,21 +71,21 @@
         text-decoration: none !important;
       }
 
-      .intervo-pricing-card:first-child {
+      .voxa-pricing-card:first-child {
         border-top-right-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
       }
 
-      .intervo-pricing-card:nth-child(2) {
+      .voxa-pricing-card:nth-child(2) {
         border-radius: 0 !important;
       }
 
-      .intervo-pricing-card:last-child {
+      .voxa-pricing-card:last-child {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source {
+      .voxa-pricing-card.voxa-pricing-open-source {
         background: transparent !important;
         border: 2px dashed #d4d4d8 !important;
         border-top-right-radius: 0 !important;
@@ -94,36 +94,36 @@
         border-bottom-left-radius: 12px !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source
-        .intervo-pricing-card-content {
+      .voxa-pricing-card.voxa-pricing-open-source
+        .voxa-pricing-card-content {
         color: #52525b !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source
-        .intervo-pricing-plan-title
+      .voxa-pricing-card.voxa-pricing-open-source
+        .voxa-pricing-plan-title
         h3 {
         color: #18181b !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source
-        .intervo-pricing-price-amount {
+      .voxa-pricing-card.voxa-pricing-open-source
+        .voxa-pricing-price-amount {
         color: #18181b !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source
-        .intervo-pricing-cta-button {
+      .voxa-pricing-card.voxa-pricing-open-source
+        .voxa-pricing-cta-button {
         background-color: transparent !important;
         color: #18181b !important;
         border: 2px solid #d4d4d8 !important;
       }
 
-      .intervo-pricing-card.intervo-pricing-open-source
-        .intervo-pricing-cta-button:hover {
+      .voxa-pricing-card.voxa-pricing-open-source
+        .voxa-pricing-cta-button:hover {
         background-color: #f4f4f5 !important;
         border-color: #a1a1aa !important;
       }
 
-      .intervo-pricing-card-content {
+      .voxa-pricing-card-content {
         display: flex !important;
         flex-direction: column !important;
         gap: 32px !important;
@@ -132,17 +132,17 @@
         height: 100% !important;
       }
 
-      .intervo-pricing-card-header {
+      .voxa-pricing-card-header {
         display: flex !important;
         flex-direction: column !important;
         gap: 16px !important;
       }
 
-      .intervo-pricing-plan-title {
+      .voxa-pricing-plan-title {
         font-weight: 500 !important;
       }
 
-      .intervo-pricing-plan-title h3 {
+      .voxa-pricing-plan-title h3 {
         font-weight: 600 !important;
         font-size: 1.875rem !important;
         line-height: 2.25rem !important;
@@ -151,20 +151,20 @@
         color: inherit !important;
       }
 
-      .intervo-pricing-plan-subtitle-row {
+      .voxa-pricing-plan-subtitle-row {
         display: flex !important;
         justify-content: space-between !important;
         margin-top: 4px !important;
         align-items: center !important;
       }
 
-      .intervo-pricing-plan-subtitle {
+      .voxa-pricing-plan-subtitle {
         color: #52525b !important;
         font-size: inherit !important;
         margin: 0 !important;
       }
 
-      .intervo-pricing-recommended-badge {
+      .voxa-pricing-recommended-badge {
         height: 28px !important;
         padding: 2px 12px !important;
         background-color: #0063e2 !important;
@@ -176,7 +176,7 @@
         border: none !important;
       }
 
-      .intervo-pricing-price-section {
+      .voxa-pricing-price-section {
         min-height: 90px !important;
         max-height: 140px !important;
         display: flex !important;
@@ -185,20 +185,20 @@
         gap: 12px !important;
       }
 
-      .intervo-pricing-price-label {
+      .voxa-pricing-price-label {
         color: #52525b !important;
         line-height: 1.5 !important;
         margin: 0 !important;
         font-size: inherit !important;
       }
 
-      .intervo-pricing-price-display {
+      .voxa-pricing-price-display {
         display: flex !important;
         align-items: end !important;
         gap: 6px !important;
       }
 
-      .intervo-pricing-price-amount {
+      .voxa-pricing-price-amount {
         font-weight: 800 !important;
         font-size: 3rem !important;
         line-height: 3rem !important;
@@ -207,20 +207,20 @@
         color: inherit !important;
       }
 
-      .intervo-pricing-price-currency {
+      .voxa-pricing-price-currency {
         font-size: 1.25rem !important;
         line-height: 1.75rem !important;
         font-weight: 600 !important;
         color: inherit !important;
       }
 
-      .intervo-pricing-tab-container {
+      .voxa-pricing-tab-container {
         width: 100% !important;
         max-width: 280px !important;
         position: relative !important;
       }
 
-      .intervo-pricing-tab-list {
+      .voxa-pricing-tab-list {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         height: 40px !important;
@@ -235,7 +235,7 @@
         border: none !important;
       }
 
-      .intervo-pricing-tab-button {
+      .voxa-pricing-tab-button {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -254,13 +254,13 @@
         text-decoration: none !important;
       }
 
-      .intervo-pricing-tab-button.intervo-pricing-active {
+      .voxa-pricing-tab-button.voxa-pricing-active {
         background: white !important;
         color: #1e293b !important;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
       }
 
-      .intervo-pricing-save-badge {
+      .voxa-pricing-save-badge {
         position: absolute !important;
         top: -16px !important;
         left: 50% !important;
@@ -280,30 +280,30 @@
         border: none !important;
       }
 
-      .intervo-pricing-tab-content {
+      .voxa-pricing-tab-content {
         margin-top: 20px !important;
       }
 
-      .intervo-pricing-features-section {
+      .voxa-pricing-features-section {
         display: flex !important;
         flex-direction: column !important;
         gap: 20px !important;
       }
 
-      .intervo-pricing-features-title {
+      .voxa-pricing-features-title {
         line-height: 1.5 !important;
         color: #52525b !important;
         margin: 0 !important;
         font-size: inherit !important;
       }
 
-      .intervo-pricing-feature-item {
+      .voxa-pricing-feature-item {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
       }
 
-      .intervo-pricing-feature-text {
+      .voxa-pricing-feature-text {
         display: flex !important;
         align-items: center !important;
         gap: 8px !important;
@@ -313,14 +313,14 @@
         color: inherit !important;
       }
 
-      .intervo-pricing-check-icon {
+      .voxa-pricing-check-icon {
         width: 16px !important;
         height: 16px !important;
         color: currentColor !important;
         flex-shrink: 0 !important;
       }
 
-      .intervo-pricing-info-icon {
+      .voxa-pricing-info-icon {
         width: 20px !important;
         height: 20px !important;
         padding: 2px !important;
@@ -328,7 +328,7 @@
         flex-shrink: 0 !important;
       }
 
-      .intervo-pricing-cta-section {
+      .voxa-pricing-cta-section {
         display: flex !important;
         flex-direction: column !important;
         gap: 8px !important;
@@ -337,7 +337,7 @@
         margin-top: auto !important;
       }
 
-      .intervo-pricing-cta-button {
+      .voxa-pricing-cta-button {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -359,11 +359,11 @@
         font-family: inherit !important;
       }
 
-      .intervo-pricing-cta-button:hover {
+      .voxa-pricing-cta-button:hover {
         background-color: rgba(15, 23, 42, 0.9) !important;
       }
 
-      .intervo-pricing-cta-subtitle {
+      .voxa-pricing-cta-subtitle {
         font-size: 0.875rem !important;
         line-height: 1.5 !important;
         color: #52525b !important;
@@ -371,129 +371,129 @@
         margin: 0 !important;
       }
 
-      .intervo-pricing-hidden {
+      .voxa-pricing-hidden {
         display: none !important;
       }
 
       /* Mobile responsiveness */
       @media (max-width: 1200px) {
-        .intervo-pricing-container-inner {
+        .voxa-pricing-container-inner {
           width: 95% !important;
         }
 
-        .intervo-pricing-card {
+        .voxa-pricing-card {
           padding: 24px !important;
           max-width: 300px !important;
         }
 
-        .intervo-pricing-card-content {
+        .voxa-pricing-card-content {
           gap: 28px !important;
         }
       }
 
       @media (max-width: 950px) {
-        .intervo-pricing-container-inner {
+        .voxa-pricing-container-inner {
           width: 100% !important;
         }
 
-        .intervo-pricing-cards-container {
+        .voxa-pricing-cards-container {
           flex-direction: column !important;
           gap: 16px !important;
         }
 
-        .intervo-pricing-card {
+        .voxa-pricing-card {
           max-width: none !important;
           padding: 28px !important;
         }
 
-        .intervo-pricing-card:first-child {
+        .voxa-pricing-card:first-child {
           border-radius: 12px !important;
           border-bottom-left-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
         }
 
-        .intervo-pricing-card:nth-child(2) {
+        .voxa-pricing-card:nth-child(2) {
           border-radius: 0 !important;
         }
 
-        .intervo-pricing-card:last-child {
+        .voxa-pricing-card:last-child {
           border-radius: 12px !important;
           border-top-left-radius: 0 !important;
           border-top-right-radius: 0 !important;
         }
 
-        .intervo-pricing-card.intervo-pricing-open-source {
+        .voxa-pricing-card.voxa-pricing-open-source {
           border-radius: 12px !important;
           border-bottom-left-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
         }
 
-        .intervo-pricing-save-badge {
+        .voxa-pricing-save-badge {
           left: 50% !important;
         }
       }
 
       @media (max-width: 640px) {
-        .intervo-pricing-wrapper {
+        .voxa-pricing-wrapper {
           padding: 1rem !important;
         }
 
-        .intervo-pricing-card {
+        .voxa-pricing-card {
           padding: 24px !important;
         }
 
-        .intervo-pricing-card-content {
+        .voxa-pricing-card-content {
           gap: 24px !important;
         }
 
-        .intervo-pricing-price-amount {
+        .voxa-pricing-price-amount {
           font-size: 2rem !important;
           line-height: 2rem !important;
         }
 
-        .intervo-pricing-price-currency {
+        .voxa-pricing-price-currency {
           font-size: 1rem !important;
           line-height: 1.5rem !important;
         }
 
-        .intervo-pricing-recommended-badge {
+        .voxa-pricing-recommended-badge {
           font-size: 0.75rem !important;
         }
 
-        .intervo-pricing-tab-container {
+        .voxa-pricing-tab-container {
           max-width: none !important;
         }
       }
     </style>
-    <div class="intervo-pricing-wrapper">
-      <div class="intervo-pricing-container-outer">
-        <div class="intervo-pricing-container-inner">
-          <div class="intervo-pricing-cards-container">
+    <div class="voxa-pricing-wrapper">
+      <div class="voxa-pricing-container-outer">
+        <div class="voxa-pricing-container-inner">
+          <div class="voxa-pricing-cards-container">
             <!-- Open Source plan -->
-            <div class="intervo-pricing-card intervo-pricing-open-source">
-              <div class="intervo-pricing-card-content">
-                <div class="intervo-pricing-card-header">
-                  <div class="intervo-pricing-plan-title">
+            <div class="voxa-pricing-card voxa-pricing-open-source">
+              <div class="voxa-pricing-card-content">
+                <div class="voxa-pricing-card-header">
+                  <div class="voxa-pricing-plan-title">
                     <h3>Self-Hosted</h3>
-                    <div class="intervo-pricing-plan-subtitle-row">
-                      <p class="intervo-pricing-plan-subtitle">Open Source</p>
+                    <div class="voxa-pricing-plan-subtitle-row">
+                      <p class="voxa-pricing-plan-subtitle">Open Source</p>
                     </div>
                   </div>
-                  <div class="intervo-pricing-price-section">
-                    <p class="intervo-pricing-price-label">Always</p>
-                    <div class="intervo-pricing-price-display">
-                      <h1 class="intervo-pricing-price-amount">Free</h1>
+                  <div class="voxa-pricing-price-section">
+                    <p class="voxa-pricing-price-label">Always</p>
+                    <div class="voxa-pricing-price-display">
+                      <h1 class="voxa-pricing-price-amount">Free</h1>
                     </div>
                   </div>
                 </div>
 
-                <div class="intervo-pricing-features-section">
-                  <p class="intervo-pricing-features-title">What's included:</p>
+                <div class="voxa-pricing-features-section">
+                  <p class="voxa-pricing-features-title">What's included:</p>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -510,10 +510,10 @@
                     </p>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -530,10 +530,10 @@
                     </p>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -550,10 +550,10 @@
                     </p>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -570,10 +570,10 @@
                     </p>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -590,10 +590,10 @@
                     </p>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -611,10 +611,10 @@
                   </div>
                 </div>
 
-                <div class="intervo-pricing-cta-section">
+                <div class="voxa-pricing-cta-section">
                   <a
-                    href="https://github.com/intervo/intervo"
-                    class="intervo-pricing-cta-button"
+                    href="https://github.com/voxa/voxa"
+                    class="voxa-pricing-cta-button"
                     target="_top"
                   >
                     <svg
@@ -630,40 +630,40 @@
                     </svg>
                     View on GitHub
                   </a>
-                  <p class="intervo-pricing-cta-subtitle">
+                  <p class="voxa-pricing-cta-subtitle">
                     Open source • Self-hosted
                   </p>
                 </div>
               </div>
             </div>
             <!-- Pay as you go plan -->
-            <div class="intervo-pricing-card">
-              <div class="intervo-pricing-card-content">
-                <div class="intervo-pricing-card-header">
-                  <div class="intervo-pricing-plan-title">
+            <div class="voxa-pricing-card">
+              <div class="voxa-pricing-card-content">
+                <div class="voxa-pricing-card-header">
+                  <div class="voxa-pricing-plan-title">
                     <h3>Pay as you go</h3>
-                    <div class="intervo-pricing-plan-subtitle-row">
-                      <p class="intervo-pricing-plan-subtitle">
+                    <div class="voxa-pricing-plan-subtitle-row">
+                      <p class="voxa-pricing-plan-subtitle">
                         Developer Plan
                       </p>
                     </div>
                   </div>
-                  <div class="intervo-pricing-price-section">
-                    <p class="intervo-pricing-price-label">Starts with</p>
-                    <div class="intervo-pricing-price-display">
-                      <h1 class="intervo-pricing-price-amount">10</h1>
-                      <span class="intervo-pricing-price-currency">$ USD</span>
+                  <div class="voxa-pricing-price-section">
+                    <p class="voxa-pricing-price-label">Starts with</p>
+                    <div class="voxa-pricing-price-display">
+                      <h1 class="voxa-pricing-price-amount">10</h1>
+                      <span class="voxa-pricing-price-currency">$ USD</span>
                     </div>
                   </div>
                 </div>
 
-                <div class="intervo-pricing-features-section">
-                  <p class="intervo-pricing-features-title">What's inside:</p>
+                <div class="voxa-pricing-features-section">
+                  <p class="voxa-pricing-features-title">What's inside:</p>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -679,7 +679,7 @@
                       Access to fast models
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -696,10 +696,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -715,7 +715,7 @@
                       2,000 AI credits
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -732,10 +732,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -751,7 +751,7 @@
                       AI Workflow
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -768,10 +768,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -787,7 +787,7 @@
                       Unlimited Agents
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -804,10 +804,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -823,7 +823,7 @@
                       Unlimited links to train on
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -840,10 +840,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -859,7 +859,7 @@
                       API Access
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -876,10 +876,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -895,7 +895,7 @@
                       Integration
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -912,10 +912,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -931,7 +931,7 @@
                       Widget chat/voice
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -948,10 +948,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -967,7 +967,7 @@
                       Basic Analytics
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -985,14 +985,14 @@
                   </div>
                 </div>
 
-                <div class="intervo-pricing-cta-section">
+                <div class="voxa-pricing-cta-section">
                   <a
-                    href="https://app.intervo.ai/default/settings/plans"
-                    class="intervo-pricing-cta-button"
+                    href="https://app.voxa.ai/default/settings/plans"
+                    class="voxa-pricing-cta-button"
                     target="_top"
                     >Select Pay as you go</a
                   >
-                  <p class="intervo-pricing-cta-subtitle">
+                  <p class="voxa-pricing-cta-subtitle">
                     Pay as you go · Plus local taxes
                   </p>
                 </div>
@@ -1000,57 +1000,57 @@
             </div>
 
             <!-- Subscription plan -->
-            <div class="intervo-pricing-card">
-              <div class="intervo-pricing-card-content">
-                <div class="intervo-pricing-card-header">
-                  <div class="intervo-pricing-plan-title">
+            <div class="voxa-pricing-card">
+              <div class="voxa-pricing-card-content">
+                <div class="voxa-pricing-card-header">
+                  <div class="voxa-pricing-plan-title">
                     <h3>Subscription</h3>
-                    <div class="intervo-pricing-plan-subtitle-row">
-                      <p class="intervo-pricing-plan-subtitle">Business Plan</p>
-                      <p class="intervo-pricing-recommended-badge">
+                    <div class="voxa-pricing-plan-subtitle-row">
+                      <p class="voxa-pricing-plan-subtitle">Business Plan</p>
+                      <p class="voxa-pricing-recommended-badge">
                         Recommended
                       </p>
                     </div>
                   </div>
-                  <div class="intervo-pricing-price-section">
-                    <div class="intervo-pricing-tab-container">
-                      <div class="intervo-pricing-tab-list">
+                  <div class="voxa-pricing-price-section">
+                    <div class="voxa-pricing-tab-container">
+                      <div class="voxa-pricing-tab-list">
                         <button
                           type="button"
-                          class="intervo-pricing-tab-button"
-                          id="intervo-pricing-yearly-tab"
+                          class="voxa-pricing-tab-button"
+                          id="voxa-pricing-yearly-tab"
                           onclick="switchTab('yearly')"
                         >
                           Yearly
-                          <div class="intervo-pricing-save-badge">Save 30%</div>
+                          <div class="voxa-pricing-save-badge">Save 30%</div>
                         </button>
                         <button
                           type="button"
-                          class="intervo-pricing-tab-button"
-                          id="intervo-pricing-monthly-tab"
+                          class="voxa-pricing-tab-button"
+                          id="voxa-pricing-monthly-tab"
                           onclick="switchTab('monthly')"
                         >
                           Monthly
                         </button>
                       </div>
                       <div
-                        class="intervo-pricing-tab-content"
-                        id="intervo-pricing-yearly-content"
+                        class="voxa-pricing-tab-content"
+                        id="voxa-pricing-yearly-content"
                       >
-                        <div class="intervo-pricing-price-display">
-                          <h1 class="intervo-pricing-price-amount">99</h1>
-                          <span class="intervo-pricing-price-currency"
+                        <div class="voxa-pricing-price-display">
+                          <h1 class="voxa-pricing-price-amount">99</h1>
+                          <span class="voxa-pricing-price-currency"
                             >$ USD/month</span
                           >
                         </div>
                       </div>
                       <div
-                        class="intervo-pricing-tab-content"
-                        id="intervo-pricing-monthly-content"
+                        class="voxa-pricing-tab-content"
+                        id="voxa-pricing-monthly-content"
                       >
-                        <div class="intervo-pricing-price-display">
-                          <h1 class="intervo-pricing-price-amount">129</h1>
-                          <span class="intervo-pricing-price-currency"
+                        <div class="voxa-pricing-price-display">
+                          <h1 class="voxa-pricing-price-amount">129</h1>
+                          <span class="voxa-pricing-price-currency"
                             >$ USD/month</span
                           >
                         </div>
@@ -1059,13 +1059,13 @@
                   </div>
                 </div>
 
-                <div class="intervo-pricing-features-section">
-                  <p class="intervo-pricing-features-title">What's inside:</p>
+                <div class="voxa-pricing-features-section">
+                  <p class="voxa-pricing-features-title">What's inside:</p>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1081,7 +1081,7 @@
                       Access to fast models
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1098,10 +1098,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1117,7 +1117,7 @@
                       50,000 AI credits
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1134,10 +1134,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1153,7 +1153,7 @@
                       AI Workflow
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1170,10 +1170,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1189,7 +1189,7 @@
                       Unlimited links to train on
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1206,10 +1206,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1225,7 +1225,7 @@
                       API Access
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1242,10 +1242,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1261,7 +1261,7 @@
                       Integration
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1278,10 +1278,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1297,7 +1297,7 @@
                       Widget chat/voice
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1314,10 +1314,10 @@
                     </svg>
                   </div>
 
-                  <div class="intervo-pricing-feature-item">
-                    <p class="intervo-pricing-feature-text">
+                  <div class="voxa-pricing-feature-item">
+                    <p class="voxa-pricing-feature-text">
                       <svg
-                        class="intervo-pricing-check-icon"
+                        class="voxa-pricing-check-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -1333,7 +1333,7 @@
                       Basic Analytics
                     </p>
                     <svg
-                      class="intervo-pricing-info-icon"
+                      class="voxa-pricing-info-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -1351,16 +1351,16 @@
                   </div>
                 </div>
 
-                <div class="intervo-pricing-cta-section">
+                <div class="voxa-pricing-cta-section">
                   <a
-                    href="https://app.intervo.ai/default/settings/plans"
-                    class="intervo-pricing-cta-button"
-                    id="intervo-pricing-subscription-button"
+                    href="https://app.voxa.ai/default/settings/plans"
+                    class="voxa-pricing-cta-button"
+                    id="voxa-pricing-subscription-button"
                     target="_top"
                   >
                     Select Monthly Plan
                   </a>
-                  <p class="intervo-pricing-cta-subtitle">
+                  <p class="voxa-pricing-cta-subtitle">
                     Subscription payment
                   </p>
                 </div>
@@ -1373,29 +1373,29 @@
 
     <script>
       function switchTab(tab) {
-        const yearlyTab = document.getElementById("intervo-pricing-yearly-tab");
+        const yearlyTab = document.getElementById("voxa-pricing-yearly-tab");
         const monthlyTab = document.getElementById(
-          "intervo-pricing-monthly-tab"
+          "voxa-pricing-monthly-tab"
         );
         const yearlyContent = document.getElementById(
-          "intervo-pricing-yearly-content"
+          "voxa-pricing-yearly-content"
         );
         const monthlyContent = document.getElementById(
-          "intervo-pricing-monthly-content"
+          "voxa-pricing-monthly-content"
         );
         const subscriptionButton = document.getElementById(
-          "intervo-pricing-subscription-button"
+          "voxa-pricing-subscription-button"
         );
 
         if (tab === "yearly") {
-          yearlyTab.classList.add("intervo-pricing-active");
-          monthlyTab.classList.remove("intervo-pricing-active");
+          yearlyTab.classList.add("voxa-pricing-active");
+          monthlyTab.classList.remove("voxa-pricing-active");
           yearlyContent.style.display = "block";
           monthlyContent.style.display = "none";
           subscriptionButton.textContent = "Select Yearly Plan";
         } else {
-          monthlyTab.classList.add("intervo-pricing-active");
-          yearlyTab.classList.remove("intervo-pricing-active");
+          monthlyTab.classList.add("voxa-pricing-active");
+          yearlyTab.classList.remove("voxa-pricing-active");
           monthlyContent.style.display = "block";
           yearlyContent.style.display = "none";
           subscriptionButton.textContent = "Select Monthly Plan";

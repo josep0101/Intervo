@@ -2,25 +2,25 @@
 
 # Configuration
 INTERNAL_REPO="."
-OPENSOURCE_REPO="/tmp/intervo-opensource-$$"
-OPENSOURCE_REMOTE_URL="https://github.com/Intervo/Intervo.git"  # Add your open source repo URL here
+OPENSOURCE_REPO="/tmp/voxa-opensource-$$"
+OPENSOURCE_REMOTE_URL="https://github.com/Voxa/Voxa.git"  # Add your open source repo URL here
 
 # Files/folders to exclude from sync
 EXCLUDE_PATTERNS=(
-    "packages/intervo-frontend/.env"
-    "packages/intervo-frontend/.env.local"
-    "packages/intervo-backend/src/billing/"
-    "packages/intervo-backend/routes/*admin*.js"
-    "packages/intervo-backend/routes/*Admin*.js"
-    "packages/intervo-backend/routes/billing.js"
-    "packages/intervo-backend/production_vector_store/"
-    "packages/intervo-backend/vector_stores/"
-    "packages/intervo-frontend/src/components/enterprise/"
-    "packages/intervo-frontend/src/components/billing/"
-    "packages/intervo-frontend/src/pages/admin/"
-    "packages/intervo-frontend/src/app/(admin)/admin/"
-    "packages/intervo-frontend/src/app/(workspace)/[workspaceid]/settings/"
-    "packages/intervo-frontend/src/app/(workspace)/[workspaceid]/agent/(agent)/[slug]/playground/canvas/"
+    "packages/voxa-frontend/.env"
+    "packages/voxa-frontend/.env.local"
+    "packages/voxa-backend/src/billing/"
+    "packages/voxa-backend/routes/*admin*.js"
+    "packages/voxa-backend/routes/*Admin*.js"
+    "packages/voxa-backend/routes/billing.js"
+    "packages/voxa-backend/production_vector_store/"
+    "packages/voxa-backend/vector_stores/"
+    "packages/voxa-frontend/src/components/enterprise/"
+    "packages/voxa-frontend/src/components/billing/"
+    "packages/voxa-frontend/src/pages/admin/"
+    "packages/voxa-frontend/src/app/(admin)/admin/"
+    "packages/voxa-frontend/src/app/(workspace)/[workspaceid]/settings/"
+    "packages/voxa-frontend/src/app/(workspace)/[workspaceid]/agent/(agent)/[slug]/playground/canvas/"
     "html-pages/"
     "users-export-*.csv"
     "**/node_modules"
@@ -99,7 +99,7 @@ sed -i '' \
     -e '/app\.use.*[Aa]dmin/s/^/\/\/ /' \
     -e '/app\.use.*billing/s/^/\/\/ /' \
     -e '/app\.use.*\/billing\//s/^/\/\/ /' \
-    "$OPENSOURCE_REPO/packages/intervo-backend/server.js"
+    "$OPENSOURCE_REPO/packages/voxa-backend/server.js"
 
 # Push to open source repo
 echo "📤 Pushing to open source repo..."
