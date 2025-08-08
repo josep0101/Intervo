@@ -1,15 +1,15 @@
 {
-  "name": "intervo-react",
+  "name": "voxa-react",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "dev:next": "npm run dev --workspace=intervo-frontend",
-    "build:next": "npm run build --workspace=intervo-frontend",
-    "build:cloudflare": "npm run build:next && cd packages/intervo-frontend && npx @cloudflare/next-on-pages@1",
-    "dev:widget": "npm run dev --workspace=intervo-widget",
-    "build:widget": "npm run build --workspace=intervo-widget",
+    "dev:next": "npm run dev --workspace=voxa-frontend",
+    "build:next": "npm run build --workspace=voxa-frontend",
+    "build:cloudflare": "npm run build:next && cd packages/voxa-frontend && npx @cloudflare/next-on-pages@1",
+    "dev:widget": "npm run dev --workspace=voxa-widget",
+    "build:widget": "npm run build --workspace=voxa-widget",
     "publish:widget:ci": "npm run build:widget && npx changeset publish"
   },
   "devDependencies": {

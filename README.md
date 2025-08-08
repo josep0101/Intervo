@@ -1,8 +1,8 @@
 <p align="center">
-<a href="https://intervo.ai" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #1f2937; font-family: sans-serif;">
+<a href="https://voxa.ai" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #1f2937; font-family: sans-serif;">
   <img 
     src="https://assets-v2.codedesign.ai/storage/v1/object/public/684ab08411e270f8a690637f_5f642ff0/asset-0e321543" 
-    alt="Intervo.ai Banner" 
+    alt="Voxa.ai Banner" 
     style="width: 160px; margin-right: 12px;"
   />
 
@@ -15,19 +15,19 @@
   <strong>Build, deploy, and manage advanced, goal-oriented AI agents for both voice and chat.</strong>
   <br />
   <br />
-  <a href="https://intervo.ai"><strong>Website</strong></a> ·
-  <a href="https://docs.intervo.ai"><strong>Documentation</strong></a> ·
+  <a href="https://voxa.ai"><strong>Website</strong></a> ·
+  <a href="https://docs.voxa.ai"><strong>Documentation</strong></a> ·
   <a href="https://discord.gg/paFJtW8fkZ"><strong>Join our Discord Community</strong></a> ·
-  <a href="https://github.com/Intervo/Intervo/issues"><strong>Report a Bug</strong></a>
+  <a href="https://github.com/Voxa/Voxa/issues"><strong>Report a Bug</strong></a>
 </p>
 
 ---
 
-**Intervo.ai** is an open-source platform for creating sophisticated AI-powered voice and chat agents. Move beyond simple Q&A bots and design complex, multi-step conversational workflows that can understand user intent, perform tasks, and integrate with your existing systems.
+**Voxa.ai** is an open-source platform for creating sophisticated AI-powered voice and chat agents. Move beyond simple Q&A bots and design complex, multi-step conversational workflows that can understand user intent, perform tasks, and integrate with your existing systems.
 
-This repository contains the full source code for the Intervo.ai platform, allowing you to self-host, customize, and extend its capabilities. Whether you're building a 24/7 customer support line, a proactive lead qualification agent, or an intelligent website assistant, Intervo.ai provides the tools to do it.
+This repository contains the full source code for the Voxa.ai platform, allowing you to self-host, customize, and extend its capabilities. Whether you're building a 24/7 customer support line, a proactive lead qualification agent, or an intelligent website assistant, Voxa.ai provides the tools to do it.
 
-Intervo.ai is proudly developed by the team at [**Codedesign.ai**](https://codedesign.ai).
+Voxa.ai is proudly developed by the team at [**Codedesign.ai**](https://codedesign.ai).
 
 ## ✨ Core Features
 
@@ -56,16 +56,16 @@ Get up and running in minutes using Docker.
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/Intervo/Intervo.git](https://github.com/Intervo/Intervo.git)
-    cd Intervo
+    git clone [https://github.com/Voxa/Voxa.git](https://github.com/Voxa/Voxa.git)
+    cd Voxa
     ```
 
 2.  **Configure Environment Variables**
-    Before starting, you must create a `.env` file in the `packages/intervo-backend/` directory. You can copy the example file to get started:
+    Before starting, you must create a `.env` file in the `packages/voxa-backend/` directory. You can copy the example file to get started:
     ```bash
-    cp packages/intervo-backend/.env.example packages/intervo-backend/.env
+    cp packages/voxa-backend/.env.example packages/voxa-backend/.env
     ```
-    Now, edit `packages/intervo-backend/.env` and add your necessary API keys (at a minimum, you'll need `MONGO_URI` and `JWT_SECRET`). See the full Configuration section below for all options.
+    Now, edit `packages/voxa-backend/.env` and add your necessary API keys (at a minimum, you'll need `MONGO_URI` and `JWT_SECRET`). See the full Configuration section below for all options.
 
 3.  **Start with Docker Compose**
     ```bash
@@ -93,27 +93,27 @@ For more direct control during development.
     ```
 
 2.  **Setup Environment**
-    Create and fill out your `.env` file in `packages/intervo-backend/` as described in the Docker setup.
+    Create and fill out your `.env` file in `packages/voxa-backend/` as described in the Docker setup.
 
 3.  **Start Development Servers**
     ```bash
     # Terminal 1: Start the backend
-    npm run dev --workspace=intervo-backend
+    npm run dev --workspace=voxa-backend
 
     # Terminal 2: Start the frontend
-    npm run dev --workspace=intervo-frontend
+    npm run dev --workspace=voxa-frontend
     ```
 > Note: For this setup, you will need to run your own instance of MongoDB and configure the `MONGO_URI` accordingly.
 
 ---
 
-## 🔧 Configuration (`packages/intervo-backend/.env`)
+## 🔧 Configuration (`packages/voxa-backend/.env`)
 
 Configure your services by setting these environment variables.
 
 ```env
 # General
-MONGO_URI=mongodb://admin:password123@mongodb:27017/intervo?authSource=admin
+MONGO_URI=mongodb://admin:password123@mongodb:27017/voxa?authSource=admin
 JWT_SECRET=your-super-secret-jwt-key-that-is-long
 
 # AI Providers (add keys for the ones you use)
@@ -151,10 +151,10 @@ HETZNER_STORAGE_BUCKET=
 ```
 ## 🗺️ Roadmap
 
-We have an ambitious vision for Intervo.ai. Here’s what we're focused on next:
+We have an ambitious vision for Voxa.ai. Here’s what we're focused on next:
 
 ### Phase 1: Foundation & Stability (Current Focus)
-- [ ] **Comprehensive Documentation**: Creating detailed guides for every feature at [docs.intervo.ai](https://docs.intervo.ai).
+- [ ] **Comprehensive Documentation**: Creating detailed guides for every feature at [docs.voxa.ai](https://docs.voxa.ai).
 - [ ] **Simplified Setup**: Improving the Docker and local setup experience with better scripts and error handling.
 - [ ] **Test Coverage**: Increasing unit and integration test coverage across the backend and frontend.
 
@@ -162,7 +162,7 @@ We have an ambitious vision for Intervo.ai. Here’s what we're focused on next:
 - [ ] **Agentic Tools & Functions**: Allowing agents in the workflow to use external APIs (e.g., check weather, book appointments, search databases).
 - [ ] **WebRTC Integration**: Introducing direct browser-to-browser voice calls via the web widget, reducing reliance on Twilio for web channels.
 - [ ] **Enhanced Webhook System**: Expanding the number of trigger events and providing richer data payloads for deeper integrations.
-- [ ] **Mobile SDKs (iOS/Android)**: Releasing native SDKs to embed Intervo.ai agents into mobile applications.
+- [ ] **Mobile SDKs (iOS/Android)**: Releasing native SDKs to embed Voxa.ai agents into mobile applications.
 
 ### Phase 3: Intelligence & Expansion
 - [ ] **Advanced Analytics Dashboard**: Providing deep insights into conversation funnels, intent recognition accuracy, and user engagement.
@@ -259,4 +259,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Intervo/Intervo&type=Date)](https://star-history.com/#Intervo/Intervo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Voxa/Voxa&type=Date)](https://star-history.com/#Voxa/Voxa&Date)

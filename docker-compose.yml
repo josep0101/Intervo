@@ -10,7 +10,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password123
     networks:
-      - intervo-network
+      - voxa-network
     restart: unless-stopped
 
   # Frontend Development
@@ -24,26 +24,26 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-    command: sh -c "npm install --legacy-peer-deps && npm run build --workspace=intervo-widget && npm exec --workspace=intervo-frontend -- next dev"
+    command: sh -c "npm install --legacy-peer-deps && npm run build --workspace=voxa-widget && npm exec --workspace=voxa-frontend -- next dev"
     networks:
-      - intervo-network
+      - voxa-network
     restart: unless-stopped
 
   # Backend Development
   backend:
     image: node:20-alpine
-    working_dir: /app/packages/intervo-backend
+    working_dir: /app/packages/voxa-backend
     volumes:
       - .:/app
-      - backend_node_modules:/app/packages/intervo-backend/node_modules
+      - backend_node_modules:/app/packages/voxa-backend/node_modules
     ports:
       - "3001:3003"
     environment:
       - NODE_ENV=development
-      - MONGO_URI=mongodb://admin:password123@mongodb:27017/intervo?authSource=admin
+      - MONGO_URI=mongodb://admin:password123@mongodb:27017/voxa?authSource=admin
     command: sh -c "npm install --legacy-peer-deps && npm run dev"
     networks:
-      - intervo-network
+      - voxa-network
     depends_on:
       - mongodb
     restart: unless-stopped
@@ -51,22 +51,22 @@ services:
   # RAG API (Basic version)
   rag-api:
     image: python:3.11-slim
-    working_dir: /app/packages/intervo-backend/rag_py
+    working_dir: /app/packages/voxa-backend/rag_py
     volumes:
       - .:/app
       - rag_api_cache:/root/.cache
     ports:
       - "4003:4003"
     environment:
-      - PYTHONPATH=/app/packages/intervo-backend
+      - PYTHONPATH=/app/packages/voxa-backend
       - ENVIRONMENT=development
     command: sh -c "pip install --no-cache-dir -r requirements.txt && python api.py"
     networks:
-      - intervo-network
+      - voxa-network
     restart: unless-stopped
 
 networks:
-  intervo-network:
+  voxa-network:
     driver: bridge
 
 volumes:
